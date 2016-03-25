@@ -1,0 +1,10 @@
+(module 
+    (export "list_add" $list_add)
+    (export "list_get" $list_get)
+    (func $list_add (param $addr i32) (param $a1 i32) (param $a2 i32)
+        (i32.store (get_local $addr) (get_local $a1)))
+    (func $list_get (param $addr i32) (result i32)
+        (i32.load (get_local $addr)))
+    (memory 2048))
+(invoke "list_add" (i32.const 0) (i32.const 10))
+(assert_return (invoke "list_get" (i32.const 0)) (i32.const 10))
