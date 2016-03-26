@@ -108,7 +108,7 @@
         (get_local $list)
     )
 
-    (memory 2048))
+    (memory 4096))
 
 
 (invoke "init_ttt" (i32.const 0))
