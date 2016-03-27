@@ -1,4 +1,6 @@
 (module 
+    (memory 1024 1024)
+    (export "memory" memory)
     (export "list_add" $list_add)
     (export "list_size" $list_size)
     (export "list_get" $list_get)
@@ -108,7 +110,7 @@
         (get_local $list)
     )
 
-    (memory 4096))
+)
 
 
 (invoke "init_ttt" (i32.const 0))
